@@ -1,0 +1,27 @@
+[project]
+name = "sheetforming"
+version = "0.1.0"
+description = "Plasticity models for sheet metal forming: yield criteria, hardening laws, triaxiality"
+readme = "README.md"
+authors = [{ name = "Domingo Morales Palma", email = "dmpalma@us.es" }]
+license = "GPL-3.0-or-later"
+license-files = ["LICENSE"]
+requires-python = ">=3.11"
+dependencies = [
+    "numpy>=2.0",
+    "pandas>=2.2",
+    "matplotlib>=3.8",
+]
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[tool.uv]
+default-groups = ["dev"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

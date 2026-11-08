@@ -1,0 +1,45 @@
+# graph.mplstyle
+#
+# Shared matplotlib style for every figure in this project -- applied via
+# plot_style.py, not used directly. Sized/tuned so a figure created at its
+# true final print width (see plot_style.figsize()/width_1column & co,
+# following Elsevier's artwork sizing guide: 90/140/190 mm for 1/1.5/2-column
+# figures) already looks correct on screen too -- there is no separate
+# "screen" style; only the output FILE FORMAT should differ between a quick
+# on-screen look (PNG) and a manuscript figure (vector PDF/SVG), see
+# plot_style.savefig().
+
+font.family: serif
+mathtext.fontset: cm
+# Uncomment to typeset with a real LaTeX installation instead (needs
+# pdflatex on PATH): exact LaTeX-matching typography, but every figure in
+# the whole process fails outright if LaTeX isn't installed wherever this
+# code runs -- mathtext (the default above) needs no external dependency
+# and already renders the $...$ math used throughout this project.
+#text.usetex: True
+
+font.size: 9
+axes.labelsize: 9
+axes.titlesize: 10
+xtick.labelsize: 8
+ytick.labelsize: 8
+legend.fontsize: 8
+
+lines.linewidth: 1.0
+lines.markersize: 3
+
+# Legend frame: square corners, black edge. Patches in general (legend
+# frame included, plus e.g. the round bbox behind a formula annotation
+# in constitutive_laws.plot_fit): thin border, and white/~85% opaque
+# fill by default (no separate patch.alpha rcParam, so the alpha is
+# baked into this (R, G, B, A) tuple instead -- a literal "#rrggbbaa"
+# hex can't be used here, since mplstyle files always treat "#" as a
+# start-of-comment character, even mid-line).
+legend.fancybox: False
+legend.edgecolor: black
+patch.linewidth: 0.5
+patch.facecolor: (1, 1, 1, 0.85)
+
+figure.dpi: 100
+savefig.dpi: 300
+savefig.bbox: tight
